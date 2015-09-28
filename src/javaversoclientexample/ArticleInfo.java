@@ -19,6 +19,7 @@ public class ArticleInfo {
     
     // <editor-fold defaultstate="collapsed" desc="Properties">
     
+    
     private String ArticleNo;
     private String SerialNo;
     private String Description;

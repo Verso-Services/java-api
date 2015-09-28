@@ -64,24 +64,29 @@ public class VersoClient {
         // Create the http client
         HttpClient httpClient = HttpClientBuilder.create().build();
         
+        // Here you place the Verso API Url (TestUrl)
+        String url = "http://qa-verso-enterprise-service.azurewebsites.net/VersoApiService.svc/ImportArticlesBatch";
+        
         try {
+            
             // Here we create a sample ImportArticles Object to import in Verso
-            // Your are free to add as many articles as you like
             ImportArticlesBatchInfo batchImport = new ImportArticlesBatchInfo("mnavarro", "123");
+            
+            // Your are free to add as many articles as you like
             batchImport.addArticle(new ArticleInfo("TestPart00", "TestPartS00", "Test",
                     "ATE3", "08/06/2015", "10/10/2015", "", "", "",""));
+            
             batchImport.addArticle(new ArticleInfo("TestPart01", "TestPartS01", "Test",
                     "ATE3", "08/06/2015", "10/10/2015", "", "", "","TestBuyChannel"));
-        
-            // Here you place the Verso API Url (TestUrl)
-            String url = "http://qa-verso-enterprise-service.azurewebsites.net/VersoApiService.svc/ImportArticlesBatch";
-            HttpPost request = new HttpPost(url);            
-            request.addHeader("content-type", "application/json");
-            
-            // Create the json body and set the request body
+           
+            // Create the json body to set the request body
             Gson gson = new Gson();
             String jsonBody = gson.toJson(batchImport);
             StringEntity params = new StringEntity(jsonBody);
+            
+            // Prepare http client properties
+            HttpPost request = new HttpPost(url);            
+            request.addHeader("content-type", "application/json");
             request.setEntity(params);
             
             // Execute the response        
