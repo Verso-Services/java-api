@@ -1,11 +1,11 @@
 # java-api
 Java Library for connecting with Verso
 
-The c# API client example was developed using the Visual Studio 2013. In order to test the project you will need to:
+The java API client example was developed using the Netbeans IDE. In order to test the project you will need to:
 
-1- Download and install Visual Studio 2013, here are some links that could be useful:
- - https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx   Visual Studio download link
- - https://msdn.microsoft.com/en-us/library/e2h7fzkw.aspx Visual Studio installation instructions.
+1- Download and install Netbeans IDE, here are some links that could be useful:
+- https://netbeans.org/downloads/  Netbeans IDE download link
+- https://netbeans.org/community/releases/80/install.html Netbeans IDE installation instructions.
 
 2- Download the API client code from the following GitHub repository:
 Here we have two options:
