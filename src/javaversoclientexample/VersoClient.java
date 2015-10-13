@@ -110,7 +110,7 @@ public class VersoClient {
     /**
      * GetOutbound alerts method example
      */
-    public void GetOutboundAlerts()
+    public void GetOutboundAlertsLog()
     {
         // Create the http client
         HttpClient httpClient = HttpClientBuilder.create().build();
