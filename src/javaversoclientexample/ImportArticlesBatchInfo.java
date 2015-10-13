@@ -16,12 +16,10 @@ import java.util.ArrayList;
 /**
  * Class to handle the import articles batch json object
  */ 
-public class ImportArticlesBatchInfo {
+public class ImportArticlesBatchInfo extends ApiUser{
     
     // <editor-fold defaultstate="collapsed" desc="Properties">
     
-    private String UserName;
-    private String Password;
     private ArrayList<ArticleInfo> Articles;
     
        
@@ -35,8 +33,7 @@ public class ImportArticlesBatchInfo {
      * @param pPassword: The Articles batch user password
      */
     public ImportArticlesBatchInfo(String pUserName, String pPassword) {
-        this.UserName = pUserName;
-        this.Password = pPassword;
+        super(pUserName,pPassword);
         this.Articles = new ArrayList<>();
     }
     
@@ -47,8 +44,7 @@ public class ImportArticlesBatchInfo {
      * @param pArticles: The list of articles to be imported in Verso
      */
     public ImportArticlesBatchInfo(String pUserName, String pPassword, ArrayList<ArticleInfo> pArticles) {
-        this.UserName = pUserName;
-        this.Password = pPassword;
+        super(pUserName,pPassword);
         this.Articles = pArticles;
     }
     
@@ -63,22 +59,6 @@ public class ImportArticlesBatchInfo {
         
         this.Articles.add(pArticle);
     }
-    
-    /**
-     * UserName Getter
-     * @return UserName
-     */
-    public String getUserName() {
-        return UserName;
-    }
-
-    /**
-     * Password Getter
-     * @return Password
-     */
-    public String getPassword() {
-        return Password;
-    }
 
     /**
      * Articles Getter
@@ -86,22 +66,6 @@ public class ImportArticlesBatchInfo {
      */
     public ArrayList<ArticleInfo> getArticles() {
         return Articles;
-    }
-
-    /**
-     * UserName setter 
-     * @param pUserName UserName to be set
-     */
-    public void setUserName(String pUserName) {
-        this.UserName = pUserName;
-    }
-
-    /**
-     * Password setter
-     * @param pPassword Password to be set
-     */
-    public void setPassword(String pPassword) {
-        this.Password = pPassword;
     }
 
     /**

@@ -23,7 +23,7 @@ public class JavaVersoClientExample {
      */
     public static void main(String[] args) {
                 
-        VersoClient.getInstance().ImportArticlesBatch();
+        VersoClient.getInstance().GetOutboundAlerts();
          
     }
     

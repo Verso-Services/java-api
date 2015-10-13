@@ -106,6 +106,50 @@ public class VersoClient {
             httpClient.getConnectionManager().shutdown();
         }
     }
+    
+    /**
+     * GetOutbound alerts method example
+     */
+    public void GetOutboundAlerts()
+    {
+        // Create the http client
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        
+        // Here you place the Verso API Url (TestUrl)
+        String url = "http://qa-verso-enterprise-service.azurewebsites.net/VersoApiService.svc/GetOutboundAlertLogs";
+        
+        try {
+            
+            // Here we create a sample Api user to Authenticate
+            ApiUser user = new ApiUser("mnavarro", "123");
+            
+            // Create the json body to set the request body
+            Gson gson = new Gson();
+            String jsonBody = gson.toJson(user);
+            StringEntity params = new StringEntity(jsonBody);
+            
+            // Prepare http client properties
+            HttpPost request = new HttpPost(url);            
+            request.addHeader("content-type", "application/json");
+            request.setEntity(params);
+            
+            // Execute the response        
+            HttpResponse response = httpClient.execute(request);
+            
+            // Print the request response (Just for testing)
+            HttpEntity entity = response.getEntity();
+            String responseString = EntityUtils.toString(entity, "UTF-8");
+            System.out.println(responseString);
+            
+        }catch (Exception ex) {
+            // Handle your exception
+            System.out.println(ex);
+            
+        } finally {
+            // Close the  client connection
+            httpClient.getConnectionManager().shutdown();
+        }
+    }
        
     // </editor-fold>
         
